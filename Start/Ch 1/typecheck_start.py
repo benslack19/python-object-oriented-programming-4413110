@@ -1,6 +1,9 @@
 # Python Object Oriented Programming by Joe Marini course example
 # Checking class types and instances
 
+# self refers to the instance of the class on which the method is called
+# init: initializes the instance content such as properties and variables
+
 
 class Book:
     def __init__(self, title):
