@@ -15,11 +15,29 @@ class Publication:
         self.title = title
         self.price = price
 
+    def print_title(self):
+        print(f"The title is {self.title}")
+
 
 # create new class Periodical for period, publisher duplication
 class Periodical(Publication):
-    def __init__(self, title, price, period, publisher):
+    def __init__(
+        self, title, period, publisher, price
+    ):  # what if you change the order? it doesn't matter
         super().__init__(title, price)
+        self.period = period
+        self.publisher = publisher
+
+    def print_title(self, publisher):
+        print(f"The title is {self.title}")
+
+
+# what if you don't use all attributes in super().__init__ and add others?
+class Periodical_no_price(Publication):
+    def __init__(
+        self, title, period, publisher
+    ):  # what if you change the order? it doesn't matter
+        super().__init__(title)
         self.period = period
         self.publisher = publisher
 
@@ -55,10 +73,14 @@ class Newspaper(Periodical):  # like Magazine
         # self.publisher = publisher
 
 
+p1 = Periodical("SI", "Monthly", "Time", 5.99)
+p2 = Periodical_no_price("SI", "Monthly", "Time")
 b1 = Book("Brave New World", "Aldous Huxley", 311, 29.0)
 n1 = Newspaper("NY Times", "New York Times Company", 6.0, "Daily")
 m1 = Magazine("Scientific American", "Springer Nature", 5.99, "Monthly")
 
+print(p1.title, p1.period, p1.publisher, p1.price)
+print("Periodical no price: ", p2.title, p2.period, p2.publisher)
 print(b1.author)
 print(n1.publisher)
 print(b1.price, m1.price, n1.price)

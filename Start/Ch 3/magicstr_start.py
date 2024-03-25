@@ -41,7 +41,7 @@ b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
 b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
 
 print("Both objects alone")
-print(b1)
+print("using print", b1)
 print(b2)
 
 # can do before or after editing magic method
@@ -76,3 +76,6 @@ print("b1_repr type: ", type(b1_repr))
 print("recreated b1_repr: ", recreated_b1_repr)
 print("recreated b1_repr type: ", type(recreated_b1_repr))
 
+
+# list of magic methods
+# https://rszalski.github.io/magicmethods/
